@@ -1,0 +1,80 @@
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --heading-color: #333333;
+  --text-color: #444444;
+}
+
+[data-theme="dark"] {
+  --text-color: #dddddd;
+  --heading-color: #ffffff;
+  --bg-color: #444444;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0 30px;
+  background-color: var(--bg-color);
+}
+
+h1 {
+  color: var(--heading-color);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+  color: var(--text-color);
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mode-switch label {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.mode-switch .slider {
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: 0.4s;
+  position: absolute;
+}
+
+.mode-switch input:checked + .slider {
+  background-color: blue;
+}
+
+.mode-switch .slider:before {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  content: "";
+  transition: 0.4s;
+}
+
+.mode-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
